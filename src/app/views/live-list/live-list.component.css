@@ -1,0 +1,32 @@
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+.padding-top {
+  padding-top: 40px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.margin-card {
+  margin: 0.5%;
+}
+
+.example-card {
+  max-width: 300px;
+}
+
+.mat-card-digimon {
+    border: 1px solid  #CfD8DC;
+    border-radius: 4px 3px 6px / 2px 4px;
+    padding-top: 15px;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    margin: 5px;
+}
+
+.example-header-image {
+  background-image: url('https://digimon.shadowsmith.com/img/agumon.jpg');
+  background-size: cover;
+}

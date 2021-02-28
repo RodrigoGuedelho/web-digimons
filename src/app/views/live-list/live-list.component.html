@@ -1,0 +1,23 @@
+<mat-tab-group mat-align-tabs="start" class="padding-top">
+  <mat-tab label="Novas">
+    <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;" >
+      <ng-container class="margin-card" *ngFor="let  digimon of digimons">
+        <mat-card class="mat-card-digimon example-card margin-card"
+          fxFlex="0 1 calc(33.3% - 11px)"
+          fxFlex.lt-md="0 1 calc(50% - 11px)"
+          fxFlex.lt-sm="100%">
+          <mat-card-header>
+
+            <mat-card-title>{{digimon.name}}</mat-card-title>
+            <mat-card-subtitle>{{digimon.level}}</mat-card-subtitle>
+            </mat-card-header>
+          <img mat-card-image src={{digimon.img}} alt="Photo of a Shiba Inu">
+
+
+        </mat-card>
+      </ng-container>
+    </div>
+  </mat-tab>
+  <mat-tab label="Anteriores">Content 2</mat-tab>
+
+</mat-tab-group>
