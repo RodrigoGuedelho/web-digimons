@@ -13,7 +13,14 @@
 }
 
 .example-card {
-  max-width: 300px;
+  max-width: 400px;
+}
+
+.example-card img {
+  max-width: 250px;
+  max-height: auto;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .mat-card-digimon {
