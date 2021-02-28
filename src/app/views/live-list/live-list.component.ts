@@ -44,21 +44,14 @@ export class LiveListComponent implements OnInit {
     }
   }
 
-  async sorteio() {
+  sorteio() {
     let numeroSorteio = Math.floor(Math.random() * this.digimons.length);
 
-    await this.digimons.forEach(digimon => {
-
+    for (let i = 0; i <= numeroSorteio; i++) {
+      const digimon = this.digimons[i];
       setTimeout( () => {
         this.digimonSorteio = digimon;
-      },  1000);
-
-    });
-
-    setTimeout( () => {
-      this.digimonSorteio = this.digimons[numeroSorteio];
-    },  2000);
-
-
+      },  i * 100);
+    }
   }
 }
