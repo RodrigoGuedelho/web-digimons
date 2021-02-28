@@ -37,3 +37,7 @@
   background-image: url('https://digimon.shadowsmith.com/img/agumon.jpg');
   background-size: cover;
 }
+
+.color-body {
+  background: #d1cece;
+}
