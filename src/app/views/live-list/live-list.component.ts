@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Digimon } from 'src/app/shared/models/Digimon. model';
 import { DigimonService } from 'src/app/shared/service/digimon.service';
 
@@ -10,20 +11,38 @@ import { DigimonService } from 'src/app/shared/service/digimon.service';
 export class LiveListComponent implements OnInit {
 
   digimons : Digimon [] = [];
+  public digimonForm : FormGroup = new FormGroup({});
 
-  constructor(public api: DigimonService) {
+  constructor(
+      private fb : FormBuilder,
+      public api: DigimonService
+    ) {
 
    }
 
   ngOnInit(): void {
     this.findAllDigimons();
+    this.digimonForm = this.fb.group({name: [""]});
   }
 
   findAllDigimons() {
     this.api.findAllDigimon().subscribe(data => {
       this.digimons = data;
-      console.log(this.digimons);
     });
+  }
+
+  pesquisar() : void {
+
+    if  (this.digimonForm.value.name !== "" &&  this.digimonForm.value.name !== undefined
+      && this.digimonForm.value.name !== null) {
+        this.api.findByNameDigimon(this.digimonForm.value.name).subscribe(data => {
+          this.digimons = data;
+        });
+    } else  {
+      this.findAllDigimons();
+    }
+
+
   }
 
 }

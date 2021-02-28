@@ -14,6 +14,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,7 +34,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     MatTabsModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

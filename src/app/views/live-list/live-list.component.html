@@ -1,3 +1,15 @@
+<div  class="padding-top" fxLayoutAlign="center center">
+  <form action="" [formGroup]="digimonForm">
+    <mat-form-field appearance="legacy">
+      <mat-label>Filtrar por nome</mat-label>
+      <input matInput placeholder="Nome" formControlName="name">
+
+
+    </mat-form-field>
+    <button mat-button color="primary"  (click) = "pesquisar();"><mat-icon matSuffix>manage_search</mat-icon></button>
+  </form>
+</div>
+
 <mat-tab-group mat-align-tabs="start" class="padding-top color-body" >
   <mat-tab label="Digimons">
     <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;" >

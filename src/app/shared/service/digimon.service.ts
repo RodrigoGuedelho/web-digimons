@@ -22,4 +22,8 @@ export class DigimonService {
   public findAllDigimon() : Observable<Digimon[]> {
     return this.htttpClient.get<Digimon[]>(this.apiBaseUrl + "digimon");
   }
+
+  public findByNameDigimon(name : String) : Observable<Digimon[]> {
+    return this.htttpClient.get<Digimon[]>(this.apiBaseUrl + "digimon/name/" + name);
+  }
 }
