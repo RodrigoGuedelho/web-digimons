@@ -30,6 +30,28 @@
       </ng-container>
     </div>
   </mat-tab>
-  <mat-tab label="Sorteio">Content 2</mat-tab>
+  <mat-tab label="Sorteio">
+    <div  class="padding-top" fxLayoutAlign="center center">
+        <button mat-button color="primary"  (click) = "sorteio();"><mat-icon matSuffix>manage_search</mat-icon></button>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" style="padding: 2%;" >
+      <ng-container class="margin-card" >
+        <mat-card class="mat-card-digimon example-card margin-card"
+          fxFlex="0 1 calc(33.3% - 11px)"
+          fxFlex.lt-md="0 1 calc(50% - 11px)"
+          fxFlex.lt-sm="100%">
+          <mat-card-header>
+
+            <mat-card-title>{{digimonSorteio.name}}</mat-card-title>
+            <mat-card-subtitle>{{digimonSorteio.level}}</mat-card-subtitle>
+            </mat-card-header>
+          <img mat-card-image src={{digimonSorteio.img}} alt="Photo of a Shiba Inu">
+
+
+        </mat-card>
+      </ng-container>
+    </div>
+
+  </mat-tab>
 
 </mat-tab-group>

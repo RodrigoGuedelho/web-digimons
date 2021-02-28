@@ -11,6 +11,7 @@ import { DigimonService } from 'src/app/shared/service/digimon.service';
 export class LiveListComponent implements OnInit {
 
   digimons : Digimon [] = [];
+  digimonSorteio : Digimon = {"name":"Koromon","img":"https://digimon.shadowsmith.com/img/koromon.jpg","level":"In Training"};
   public digimonForm : FormGroup = new FormGroup({});
 
   constructor(
@@ -21,6 +22,7 @@ export class LiveListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
     this.findAllDigimons();
     this.digimonForm = this.fb.group({name: [""]});
   }
@@ -32,7 +34,6 @@ export class LiveListComponent implements OnInit {
   }
 
   pesquisar() : void {
-
     if  (this.digimonForm.value.name !== "" &&  this.digimonForm.value.name !== undefined
       && this.digimonForm.value.name !== null) {
         this.api.findByNameDigimon(this.digimonForm.value.name).subscribe(data => {
@@ -41,8 +42,23 @@ export class LiveListComponent implements OnInit {
     } else  {
       this.findAllDigimons();
     }
+  }
+
+  async sorteio() {
+    let numeroSorteio = Math.floor(Math.random() * this.digimons.length);
+
+    await this.digimons.forEach(digimon => {
+
+      setTimeout( () => {
+        this.digimonSorteio = digimon;
+      },  1000);
+
+    });
+
+    setTimeout( () => {
+      this.digimonSorteio = this.digimons[numeroSorteio];
+    },  2000);
 
 
   }
-
 }
